@@ -18,10 +18,10 @@ exports.listMusic = async () => {
     }
 };
 
-exports.deleteMusic = async (collection, musicObj) => {
-    console.log(musicObj);
+exports.deleteMusic = async (genre) => {
     try {
-        await collection.remove({genre: musicObj.genre});
+        await Music.deleteMany({genre: genre});
+        console.log(`Successfully deleted ${genre}`);
     } catch (error) {
         console.log(error);
     }

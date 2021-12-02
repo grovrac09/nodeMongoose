@@ -10,10 +10,11 @@ const app = async (args) => {
             addMusic({band: args.band, song: args.song, genre: args.genre});
         break;
         case "list":
-            listMovies();
+            listMusic();
         break;
         case "remove":
-            deleteMusic({genre: args.genre});
+            deleteMusic(args.genre);
+        break;
         default: 
             console.log("incorrect command");
     }
