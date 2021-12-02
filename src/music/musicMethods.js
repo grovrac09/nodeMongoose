@@ -17,3 +17,12 @@ exports.listMusic = async () => {
         console.log(error);
     }
 };
+
+exports.deleteMusic = async (collection, musicObj) => {
+    console.log(musicObj);
+    try {
+        await collection.remove({genre: musicObj.genre});
+    } catch (error) {
+        console.log(error);
+    }
+};
