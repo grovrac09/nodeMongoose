@@ -23,8 +23,8 @@ exports.listMusic = async () => {
 
 exports.updateMusic = async (musicId, musicObj) => {
     try {
-        const music = await Music.findByIdAndUpdate(musicId, musicObj);
-        console.log(`Successfully updated ${music}`)
+        await Music.findByIdAndUpdate(musicId, musicObj);
+        console.log(`Successfully updated`)
         mongoose.connection.close();
     } catch (error) {
         console.log(error)
