@@ -2,7 +2,7 @@ require("./database/connection");
 
 const yargs = require("yargs");
 
-const {addMusic, listMusic, deleteMusic} = require("./music/musicMethods");
+const {addMusic, listMusic, deleteMusic, updateMusic} = require("./music/musicMethods");
 
 const app = async (args) => {
     switch (process.argv[2]) {
@@ -15,12 +15,17 @@ const app = async (args) => {
         case "remove":
             deleteMusic(args.genre);
         break;
+        case "update":
+            updateMusic({_id: process.argv[3]}, {band: args.band, song: args.song, genre: args.genre, year: args.year});
+        break;
         default: 
             console.log("incorrect command");
     }
 }
 
 app(yargs.argv);
+
+
 
 
 

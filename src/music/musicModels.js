@@ -11,6 +11,9 @@ const musicSchema = new mongoose.Schema({
     }, 
     genre: {
         type: String
+    },
+    year: {
+        type: String
     }
 })
 
